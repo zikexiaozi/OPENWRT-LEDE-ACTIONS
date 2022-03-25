@@ -9,3 +9,4 @@ src-git telephony https://git.openwrt.org/feed/telephony.git
 #src-link custom /usr/src/openwrt/custom-feed
 src-git helloworld https://github.com/fw876/helloworld
 src-git MrH723_packages https://github.com/MrH723/openwrt-packages
+src-git small8 https://github.com/kenzok8/small-package
