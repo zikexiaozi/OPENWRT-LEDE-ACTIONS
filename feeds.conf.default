@@ -8,4 +8,3 @@ src-git telephony https://git.openwrt.org/feed/telephony.git
 #src-git oldpackages http://git.openwrt.org/packages.git
 #src-link custom /usr/src/openwrt/custom-feed
 src-git small https://github.com/zikexiaozi/small-package
-src-git neobird https://github.com/zikexiaozi/luci-theme-neobird
