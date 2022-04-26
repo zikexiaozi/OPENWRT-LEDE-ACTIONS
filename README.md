@@ -1,5 +1,3 @@
-基于Openwrt/LEDE编译的 Newifi D1 固件
-
 欢迎来到Lean的Openwrt源码仓库！
 =
 如何编译自己需要的 OpenWrt 固件
@@ -27,7 +25,6 @@
    ./scripts/feeds install -a
    make menuconfig
    ```
-
 5. `make -j8 download V=s` 下载dl库（国内请尽量全局科学上网）
 
 6. 输入 `make -j1 V=s` （-j1 后面是线程数。第一次编译推荐用单线程）即可开始编译你要的固件了。
