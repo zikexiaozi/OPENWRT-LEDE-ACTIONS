@@ -22,9 +22,6 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='OpenWrt'' packa
 sed -i "s/OpenWrt /ZhouDJ/g" package/lean/default-settings/files/zzz-default-settings
 #sed -i "s/Xiaomi Mi Router CR6606/XiaoWanSM出品/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-cr6606.dts
 
-mv $mt7621_xiaomi_mi-router-3-pro.dts target/linux/ramips/dts/mt7621_xiaomi_mi-router-3-pro.dts
-mv $mt7621.mk target/linux/ramips/image/mt7621.mk
-
 #删除原默认主题
 rm -rf package/lean/luci-theme-argon
 rm -rf package/lean/luci-theme-bootstrap
