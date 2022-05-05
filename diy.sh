@@ -6,8 +6,8 @@
 # See /LICENSE for more information.
 #
 # https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part2.sh
-# Description: OpenWrt DIY script part 2 (After Update feeds)
+# File name: diy.sh
+# Description: OpenWrt DIY script part(After Update feeds)
 #
 # Modify default IP
 # 修改openwrt登陆地址,把后面的IP地址改成你想要IP
@@ -21,6 +21,9 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='OpenWrt'' packa
 #sed -i "s/OpenWrt /ababwnq build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 sed -i "s/OpenWrt /ZhouDJ/g" package/lean/default-settings/files/zzz-default-settings
 #sed -i "s/Xiaomi Mi Router CR6606/XiaoWanSM出品/g" target/linux/ramips/dts/mt7621_xiaomi_mi-router-cr6606.dts
+
+mv $mt7621_xiaomi_mi-router-3-pro.dts target/linux/ramips/dts/mt7621_xiaomi_mi-router-3-pro.dts
+mv $mt7621.mk target/linux/ramips/image/mt7621.mk
 
 #删除原默认主题
 rm -rf package/lean/luci-theme-argon
