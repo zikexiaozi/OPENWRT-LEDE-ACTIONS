@@ -26,8 +26,8 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  mt7621_xiaomi_mi-router-3-pro.dts: mt7621_xiaomi_mi-router-3-pro.dts
-  mt7621.mk: mt7621.mk
+  mt7621_xiaomi_mi-router-3-pro.dts: PATCH/mt7621_xiaomi_mi-router-3-pro.dts
+  mt7621.mk: PATCH/mt7621.mk
   CONFIG_FILE: R3P.config
   DIY_SH: diy.sh
   UPLOAD_BIN_DIR: false
