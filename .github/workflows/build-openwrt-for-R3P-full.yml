@@ -28,7 +28,7 @@ env:
   FEEDS_CONF: feeds.conf.default
   DTS: mt7621_xiaomi_mi-router-3-pro.dts
   mt7621mk: mt7621.mk
-  CONFIG_FILE: R3P.config
+  CONFIG_FILE: R3P-full.config
   DIY_SH: diy.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
