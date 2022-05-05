@@ -26,8 +26,8 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  mt7621_xiaomi_mi-router-3-pro.dts: mt7621_xiaomi_mi-router-3-pro.dts
-  mt7621.mk: mt7621.mk
+  DTS: mt7621_xiaomi_mi-router-3-pro.dts
+  mt7621mk: mt7621.mk
   CONFIG_FILE: R3P.config
   DIY_SH: diy.sh
   UPLOAD_BIN_DIR: false
@@ -65,9 +65,7 @@ jobs:
 
     - name: Load custom feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF $GITHUB_WORKSPACE/openwrt/feeds.conf.default        
-        [ -e $mt7621_xiaomi_mi-router-3-pro.dts ] && mv $mt7621_xiaomi_mi-router-3-pro.dts $GITHUB_WORKSPACE/openwrt/target/linux/ramips/dts/mt7621_xiaomi_mi-router-3-pro.dts
-        [ -e $mt7621.mk ] && mv $mt7621.mk $GITHUB_WORKSPACE/openwrt/target/linux/ramips/image/mt7621.mk
+        [ -e $FEEDS_CONF ] && mv -f $FEEDS_CONF $GITHUB_WORKSPACE/openwrt/feeds.conf.default && mv -f $DTS $GITHUB_WORKSPACE/openwrt/target/linux/ramips/dts/mt7621_xiaomi_mi-router-3-pro.dts && mv -f $mt7621mk $GITHUB_WORKSPACE/openwrt/target/linux/ramips/image/mt7621.mk
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
