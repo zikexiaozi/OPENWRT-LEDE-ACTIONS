@@ -1,13 +1,23 @@
 争对xiaomi_mi-router-3-pro优化刷机体验，使用pb-boot直刷openwrt，免除设置Breed环境变量等
+
 原理：
-都知道小米R3P路由有两个内核分区kernel1及kernel2，pb-boot只能从kernel1启动，Breed环境变量默认从kernel1启动，但是不能进行后台WEB升级，升级只覆盖kernel2，设置xiaomi.r3g.bootfw=2可以从kernel2启动，但是测试发现Breed引导重启很多次才能成功，不知道什么原因，于是自行编译能让pb-boot只能从kernel1启动固件，进行分区编辑，
+
+都知道小米R3P路由有两个内核分区kernel1及kernel2
+
+pb-boot只能从kernel1启动
+
+Breed环境变量默认从kernel1启动，但是不能进行后台WEB升级，升级只覆盖kernel2，设置xiaomi.r3g.bootfw=2可以从kernel2启动，但是测试发现Breed引导重启很多次才能成功，不知道什么原因，于是自行编译能让pb-boot只能从kernel1启动固件，进行分区编辑，
 
 文件：
+
 /openwrt/target/linux/ramips/dts/mt7621_xiaomi_mi-router-3-pro.dts
+
 /openwrt/target/linux/ramips/image/mt7621.mk
+
 仅保留kernel1分区启动
 
 有能力的可以自行修改代码进行自定义编辑后编译，我只是按自己的思路进行测试，目前没有问题
+
 https://github.com/zikexiaozi/OPENWRT-LEDE-ACTIONS/
 
 刷机方法一：
