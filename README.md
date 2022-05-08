@@ -21,22 +21,36 @@ Breed环境变量默认从kernel1启动，但是不能进行后台WEB升级，�
 https://github.com/zikexiaozi/OPENWRT-LEDE-ACTIONS/
 
 刷机方法一：
+
 1、刷机步骤（自行刷入PB-BOOT，小白误折腾）pb-boot-xiaomi_r3p-20190317-61b6d33.img
+
 2、PB-BOOTIP地址192.168.1.1
+
 3、刷入192.168.123.1-PB-BOOT底包openwrt-ramips-mt7621-xiaomi_mi-router-3-pro-initramfs-kernel.bin
+
    IP地址192.168.123.1
+   
    后台用户名、密码：root、password(OPENWRT默认)
+   
 4、后台WEB升级openwrt-ramips-mt7621-xiaomi_mi-router-3-pro-squashfs-sysupgrade.bin
+
    IP地址192.168.123.1
+   
    后台用户名、密码：root、password(OPENWRT默认)
 
 
 刷机方法二：
+
 1、刷机步骤（自行刷入PB-BOOT，小白误折腾）pb-boot-xiaomi_r3p-20190317-61b6d33.img
+
 2、PB-BOOT，IP地址192.168.1.1
+
 3、直接刷入PB-BOOT-factory.bin，无需再进后台进行squashfs-sysupgrade.bin更新
+
    openwrt-ramips-mt7621-xiaomi_mi-router-3-pro-squashfs-PB-BOOT-factory.bin
+   
    IP地址192.168.123.1
+   
    后台用户名、密码：root、password(OPENWRT默认)
 
 
