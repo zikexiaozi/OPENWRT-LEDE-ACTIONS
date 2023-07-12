@@ -1,58 +1,7 @@
-争对xiaomi_mi-router-3-pro优化刷机体验，使用pb-boot直刷openwrt，免除设置Breed环境变量等
-
-原理：
-
-都知道小米R3P路由有两个内核分区kernel1及kernel2
-
-pb-boot只能从kernel1启动
-
-Breed环境变量默认从kernel1启动，但是不能进行后台WEB升级，升级只覆盖kernel2，设置xiaomi.r3g.bootfw=2可以从kernel2启动，但是测试发现Breed引导重启很多次才能成功，不知道什么原因，于是自行编译能让pb-boot只能从kernel1启动固件，进行分区编辑，
-
-文件：
-
-/openwrt/target/linux/ramips/dts/mt7621_xiaomi_mi-router-3-pro.dts
-
-/openwrt/target/linux/ramips/image/mt7621.mk
-
-仅保留kernel1分区启动
-
-有能力的可以自行修改代码进行自定义编辑后编译，我只是按自己的思路进行测试，目前没有问题
-
+基于Openwrt/LEDE编译的 Newifi D1 固件
 https://github.com/zikexiaozi/OPENWRT-LEDE-ACTIONS/
 
-刷机方法一：
-
-1、刷机步骤（自行刷入PB-BOOT，小白误折腾）pb-boot-xiaomi_r3p-20190317-61b6d33.img
-
-2、PB-BOOTIP地址192.168.1.1
-
-3、刷入192.168.123.1-PB-BOOT底包openwrt-ramips-mt7621-xiaomi_mi-router-3-pro-initramfs-kernel.bin
-
-   IP地址192.168.123.1
-   
-   后台用户名、密码：root、password(OPENWRT默认)
-   
-4、后台WEB升级openwrt-ramips-mt7621-xiaomi_mi-router-3-pro-squashfs-sysupgrade.bin
-
-   IP地址192.168.123.1
-   
-   后台用户名、密码：root、password(OPENWRT默认)
-
-
-刷机方法二：
-
-1、刷机步骤（自行刷入PB-BOOT，小白误折腾）pb-boot-xiaomi_r3p-20190317-61b6d33.img
-
-2、PB-BOOT，IP地址192.168.1.1
-
-3、直接刷入PB-BOOT-factory.bin，无需再进后台进行squashfs-sysupgrade.bin更新
-
-   openwrt-ramips-mt7621-xiaomi_mi-router-3-pro-squashfs-PB-BOOT-factory.bin
-   
-   IP地址192.168.123.1
-   
-   后台用户名、密码：root、password(OPENWRT默认)
-
+后台用户名、密码：root、password(OPENWRT默认)
 
 欢迎来到Lean的Openwrt源码仓库！
 =
@@ -108,8 +57,4 @@ make -j$(($(nproc) + 1)) V=s
 
 编译完成后输出路径：bin/targets
 
-不建议使用WSL或WSL2进行编译，容易各种出错。不提供方案。
-
-特别提示：
-------
-源代码中绝不含任何后门和可以监控或者劫持你的 HTTPS 的闭源软件， SSL 安全是互联网最后的壁垒。安全干净才是固件应该做到的；
+不建议使用WSL或WSL2进行编译，容易各种出错案。
